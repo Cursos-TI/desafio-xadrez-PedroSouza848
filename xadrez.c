@@ -7,24 +7,25 @@ int main () {
     int d = 1;
     int c = 0;  //Variável contadora para os loopings
     char direita [20] = "Direita";         //Variável para o movimento da Torre
-    char diagonal [20] = "Direita,cima";   //Variável para o movimento do Bispo
     char esquerda [20] = "Esquerda";       //Variável para o movimento da Rainha
-    char baixo [20] = "Baixo";             //Variável para o movimento do Cavalo
+    char cima [20] = "Cima";             //Variável para o movimento do Cavalo
 
     printf("Movimento da Torre: \n");   //Movimento da Torre: 5x para a direita
-    while (c < 5) {
+    for (c = 0; c < 5; c++)
+    {
         printf("%s \n", direita);
-        c++;
     }
 
-    c = 0;
     printf("\nAgora o movimento do Bispo: \n");  //Movimento do Bispo: 5x para a diagonal(direita,cima)
-    do {
-
-        printf("%s \n", diagonal);
-        c++;
-
-    } while (c < 5);
+    for (c = 0; c < 5; c++)
+    {
+        for (d = 0; d < 1; d++)
+        {
+            printf("%s, ", direita);
+        }
+        printf("%s \n", cima);
+        
+    }
 
     printf("\nAgora o movimento da Rainha: \n");   //Movimento da Rainha: 8x para a esquerda
     for(c = 0; c < 8; c++)
@@ -33,14 +34,14 @@ int main () {
     }
 
     c = 0;
-    printf("Agora, faremos o movimento do Cavalo: \n"); //Movimento do Cavalo: 2x para baixo e 1x para a esquerda
-    do {
-        for (c = 0; c < 2; c++)
+    printf("\nAgora, faremos o movimento do Cavalo: \n"); //Movimento do Cavalo: 2x para baixo e 1x para a esquerda
+        for (c = 0; c < 1; c++)
         {
-            printf("%s \n", baixo);
+            for (d = 0; d < 2; d++)
+            {
+                printf("%s, ", cima);
+            }
+            printf("%s \n", direita);
         }
-        printf("%s \n", esquerda);
-        d++;
-    } while (d <= 1);
     
 }
